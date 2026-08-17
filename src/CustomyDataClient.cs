@@ -27,7 +27,7 @@ public delegate Task<DataResponse> DataTransport(
 
 public sealed class CustomyDataClient
 {
-    public const string Version = "0.1.0";
+    public const string Version = "0.1.1";
     public const string ConformanceContract = "customy.customer-data-sdk.conformance.v1";
 
     private static readonly HashSet<string> EventTypes =

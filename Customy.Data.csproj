@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <PackageId>Customy.Data</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>Customy</Authors>
     <Description>Governed customer data collection SDK for .NET.</Description>
     <PackageProjectUrl>https://customy.ai</PackageProjectUrl>
