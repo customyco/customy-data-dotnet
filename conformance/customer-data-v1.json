@@ -1,0 +1,61 @@
+{
+  "contract": "customy.customer-data-sdk.conformance.v1",
+  "collectPath": "/v1/collect/event",
+  "batchPath": "/v1/collect/batch",
+  "scopeAuthority": "source_write_key",
+  "forbiddenPayloadKeys": [
+    "tenantId",
+    "organizationId",
+    "projectId",
+    "environmentId"
+  ],
+  "eventTypes": [
+    {
+      "type": "track",
+      "event": "Product Viewed",
+      "anonymousId": "anon_1",
+      "properties": { "sku": "A-1" }
+    },
+    {
+      "type": "identify",
+      "userId": "user_1",
+      "traits": { "plan": "enterprise" }
+    },
+    {
+      "type": "group",
+      "groupId": "account_1",
+      "userId": "user_1",
+      "traits": { "name": "Acme" }
+    },
+    {
+      "type": "page",
+      "anonymousId": "anon_1",
+      "properties": { "path": "/pricing" }
+    },
+    {
+      "type": "screen",
+      "userId": "user_1",
+      "properties": { "name": "Home" }
+    },
+    {
+      "type": "alias",
+      "userId": "user_1",
+      "anonymousId": "anon_1",
+      "properties": { "previousId": "anon_1" }
+    }
+  ],
+  "requiredNormalizedFields": [
+    "messageId",
+    "type",
+    "timestamp",
+    "schemaVersion",
+    "context.library",
+    "consent"
+  ],
+  "delivery": {
+    "retryableStatuses": [429, 500, 502, 503, 504],
+    "idempotencyField": "messageId",
+    "maximumBatchSize": 1000,
+    "failedFlushRestoresQueue": true
+  }
+}
