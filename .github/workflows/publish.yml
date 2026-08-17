@@ -12,7 +12,7 @@ jobs:
   publish:
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
-    environment: release
+    environment: nuget
     permissions:
       contents: read
       id-token: write
