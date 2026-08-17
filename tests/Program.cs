@@ -35,7 +35,7 @@ static class Program
 
     static async Task Main()
     {
-        var vectors = JsonNode.Parse(await File.ReadAllTextAsync("../sdk-data/conformance/customer-data-v1.json"))!.AsObject();
+        var vectors = JsonNode.Parse(await File.ReadAllTextAsync("conformance/customer-data-v1.json"))!.AsObject();
         Check(vectors["contract"]!.GetValue<string>() == CustomyDataClient.ConformanceContract, "contract");
         var recorder = new Recorder();
         var sdk = Client(recorder);
